@@ -47,7 +47,10 @@
   padding: .75rem 1rem;
 }
 
-.full-height {
-  height: 100vh;
-  background-color: #F8F9FA;
+
+@media (min-width: 768px) {
+  .full-height {
+    height: 100vh;
+    background-color: #F8F9FA;
+  }
 }
