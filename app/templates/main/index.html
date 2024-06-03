@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JobFinder Web Careers</title>
+    <title>Job Finder Web - Website and Mobile Application</title>
+    {% include 'includes/bootstrap_fa_links.html' %}
+
+    <style>
+      .img-banner {
+        width: 100%;
+        height: 720px;
+        object-fit: cover;
+        margin-bottom: 16px;
+      }
+    </style>
   </head>
   <body>
-    <h1>JobFinder Web Careers</h1>
-    <p>
-      JobFinder Web is a premier online job board designed to streamline the job search and hiring process.
-    </p>
+    {% include 'includes/header.html' %}
+
+    <img
+      class="img-fluid img-banner"
+      src="{{ url_for('static', filename='images/people-working.jpg') }}"
+      alt="People working"
+    />
+
+    {% include 'includes/footer.html' %}
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap.js"></script>
   </body>
 </html>
