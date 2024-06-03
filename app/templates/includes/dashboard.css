@@ -46,3 +46,8 @@
 .navbar .form-control {
   padding: .75rem 1rem;
 }
+
+.full-height {
+  height: 100vh;
+  background-color: #F8F9FA;
+}
