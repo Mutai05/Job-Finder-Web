@@ -14,7 +14,7 @@ def get_db_connection():
 
     try:
         cnx = mysql.connector.connect(**config)
-        print("Database connection successful")
+        print("Database connection was successful")
         return cnx
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
