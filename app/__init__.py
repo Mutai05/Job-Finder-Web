@@ -5,7 +5,7 @@ from .routes.main import main_bp
 from .routes.jobs import jobs_bp
 from .config import Config
 
-def create_app():
+def jobfinder_web():
     app = Flask(__name__)
     app.config.from_object(Config)
 
