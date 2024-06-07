@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{job.title}} - Job Finder Website</title>
+    {% include 'includes/bootstrap_fa_links.html' %}
+
+    <style>
+      .img-banner {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        margin-bottom: 16px;
+      }
+
+      .job-details-container {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 40px;
+      }
+      .job-details-container h2,
+      .job-details-container h3 {
+        color: #333;
+      }
+      .job-details-container h2 {
+        font-size: 26px;
+      }
+      .job-details-container h3 {
+        font-size: 20px;
+      }
+      .job-details-container p.lead {
+        color: #555;
+        font-size: 18px;
+      }
+      .job-details-container ul,
+      .job-details-container ol {
+        padding-left: 20px;
+        font-size: 18px;
+      }
+      .job-details-container ul li,
+      .job-details-container ol li {
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+      .job-details-container p {
+        font-size: 16px;
+        color: #666666;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'includes/header.html' %}
+
+    <img
+      class="img-fluid img-banner"
+      src="{{ url_for('static', filename='images/people-working.jpg') }}"
+      alt="People working"
+    />
+
+    <div class="container job-details-container">
+      <h2 class="mb-3">{{ job.title }}</h2>
+      <p class="lead mt-0 mb-4"><strong>Location:</strong> {{ job.location }}</p>
+      <h3>Responsibilities</h3>
+      <ul>
+        {% for line in job.responsibilities.split("\n") %}
+        <li>{{ line }}</li>
+        {% endfor %}
+      </ul>
+      <h3>Requirements</h3>
+      <ol>
+        {% for line in job.requirements.split("\n") %}
+        <li>{{ line }}</li>
+        {% endfor %}
+      </ol>
+      <h3>Salary</h3>
+      <p><strong>{{ job.currency }} {{ job.salary }}</strong></p>
+    </div>
+    <div>
+      <h3 class="text-center mt-4 mb-4" style="text-decoration: underline">
+        Apply for {{ job.title }} Position
+      </h3>
+    </div>
+
+    {% include 'includes/footer.html' %}
+  </body>
+</html>
