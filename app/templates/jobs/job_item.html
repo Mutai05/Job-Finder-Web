@@ -19,6 +19,7 @@
         border-radius: 8px;
         padding: 20px;
         margin-top: 40px;
+        margin-bottom: 40px;
       }
       .job-details-container h2,
       .job-details-container h3 {
@@ -76,11 +77,12 @@
       </ol>
       <h3>Salary</h3>
       <p><strong>{{ job.currency }} {{ job.salary }}</strong></p>
-    </div>
-    <div>
-      <h3 class="text-center mt-4 mb-4" style="text-decoration: underline">
-        Apply for {{ job.title }} Position
-      </h3>
+      <div>
+        <h3 class="text-center mt-4 mb-4" style="text-decoration: underline">
+          Apply for {{ job.title }} Position
+        </h3>
+        {% include 'jobs/apply_job.html' %}
+      </div>
     </div>
 
     {% include 'includes/footer.html' %}
