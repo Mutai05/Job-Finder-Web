@@ -7,4 +7,4 @@ class Config:
     MYSQL_USER = 'root'
     MYSQL_PASSWORD = ''
     MYSQL_HOST = 'localhost'
-    MYSQL_DB = 'flaskdb'
+    MYSQL_DB = 'jobfinderweb'
