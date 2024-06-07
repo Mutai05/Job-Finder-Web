@@ -24,6 +24,35 @@
       alt="People working"
     />
 
+    <!-- Add space after banner -->
+    <div style="margin-bottom: 40px"></div>
+
+    <!-- Job Listing Section -->
+    <div class="container job-listing">
+      <h2 class="mb-4 text-center">Job Listings</h2>
+      <div class="row">
+        <!-- Job Listing Card -->
+        {% for job in jobs %}
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{job['title']}}</h5>
+              <p class="card-text">
+                Location: {{job['location']}}<br />Salary: {{job['currency']}} {{job['salary']}}
+              </p>
+              <a href="/jobs/{{ job.id }}" class="btn-outline-primary">Apply</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Solid Border -->
+    <div class="container">
+      <hr style="border-top: 1px solid #e5e5e5; margin: 20px 0" />
+    </div>
+
     {% include 'includes/footer.html' %}
 
     <!-- Bootstrap JS -->
