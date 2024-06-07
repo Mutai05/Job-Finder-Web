@@ -17,3 +17,20 @@ def jobs_archive():
 
     # Render the jobs archive page template with job listings data
     return render_template("jobs/jobs_archive.html", jobs=jobs)
+
+
+@jobs_bp.route("/<int:id>")
+def jobs_item(id):
+    # Fetch the specific job item from the database
+    cnx = get_db_connection()
+    cursor = cnx.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM jobs WHERE id = %s", (id,))
+    job = cursor.fetchone()
+    cursor.close()
+    cnx.close()
+
+    if not job:
+        abort(404)
+
+    # Render the jobs archive page template with job listings data
+    return render_template("jobs/job_item.html", job=job)
