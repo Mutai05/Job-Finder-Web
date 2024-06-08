@@ -17,21 +17,48 @@
       ></button>
     </div>
     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+      <!-- Logo -->
+      <a
+        href="/admin/dashboard"
+        class="nav-link link-body-emphasis mt-4 sidebar-logo"
+        style="margin-left: 20px"
+      >
+        <img
+          src="/static/images/logo.svg"
+          alt=""
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top"
+        />JOB FINDER WEB
+      </a>
+
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+          <a
+            class="nav-link d-flex align-items-center gap-2 active"
+            aria-current="page"
+            href="/admin/dashboard"
+          >
             <i class="fas fa-tv"></i>
             Dashboard
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+          <a
+            class="nav-link d-flex align-items-center gap-2 active"
+            aria-current="page"
+            href="/admin/dashboard"
+          >
             <i class="fa fa-folder-open-o"></i>
             Job Applications
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+          <a
+            class="nav-link d-flex align-items-center gap-2 active"
+            aria-current="page"
+            href="/admin/dashboard"
+          >
             <i class="fa fa-envelope-open-o"></i>
             Enquiries
           </a>
@@ -48,13 +75,21 @@
       </h6>
       <ul class="nav flex-column mb-auto">
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+          <a
+            class="nav-link d-flex align-items-center gap-2 active"
+            aria-current="page"
+            href="/admin/dashboard"
+          >
             <i class="fa fa-user-o"></i>
             Administrators
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+          <a
+            class="nav-link d-flex align-items-center gap-2 active"
+            aria-current="page"
+            href="/admin/dashboard"
+          >
             <i class="fa fa-id-card-o"></i>
             Job Applicants
           </a>
@@ -65,18 +100,22 @@
 
       <ul class="nav flex-column mb-auto">
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+          <a
+            class="nav-link d-flex align-items-center gap-2 active"
+            aria-current="page"
+            href="/admin/dashboard"
+          >
             <i class="fa fa-gears"></i>
             Settings
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
-            <i class="fa fa-sign-out"></i>
-            Sign Out
-          </a>
-        </li>
       </ul>
+      <!-- Logout Button -->
+      <div class="text-left mt-4" style="margin-left: 10px">
+        <form action="{{ url_for('admin.logout') }}" method="post">
+          <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-sign-out"></i> Sign Out</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
