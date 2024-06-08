@@ -83,3 +83,9 @@
 .sidebar-logo img {
   margin-right: 5px;
 }
+
+/* Dashboard Title */
+
+.dashboard-title {
+  font-size: 1.5rem;
+}
