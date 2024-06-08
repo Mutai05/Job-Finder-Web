@@ -3,6 +3,7 @@
 from flask import Flask
 from .routes.main import main_bp
 from .routes.jobs import jobs_bp
+from .routes.admin import admin_bp
 from .config import Config
 
 def jobfinder_web():
@@ -13,5 +14,6 @@ def jobfinder_web():
 
     app.register_blueprint(main_bp)
     app.register_blueprint(jobs_bp)
+    app.register_blueprint(admin_bp)
 
     return app
