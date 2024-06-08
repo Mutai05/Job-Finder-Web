@@ -1,29 +1,48 @@
-<div class="container mt-5">
-  <form action="/apply_job" method="POST">
-    <div class="mb-3">
-      <label for="full_name" class="form-label">Full Name:</label>
-      <input type="text" class="form-control" id="full_name" name="full_name" required />
+<!-- app/templates/jobs/apply_job.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Apply for Job</title>
+    {% include 'includes/bootstrap_fa_links.html' %}
+  </head>
+  <body>
+    {% include 'includes/header.html' %}
+    <div class="container mt-5">
+      <form action="/jobs/apply-job" method="POST">
+        <div class="mb-3">
+          <label for="full_name" class="form-label">Full Name:</label>
+          <input type="text" class="form-control" id="full_name" name="full_name" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="linkedin_url" class="form-label">LinkedIn URL:</label>
+          <input type="text" class="form-control" id="linkedin_url" name="linkedin_url" />
+        </div>
+        <div class="mb-3">
+          <label for="education" class="form-label">Education:</label>
+          <textarea class="form-control" id="education" name="education" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="work_experience" class="form-label">Work Experience:</label>
+          <textarea
+            class="form-control"
+            id="work_experience"
+            name="work_experience"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="resume_url" class="form-label">Resume URL:</label>
+          <input type="text" class="form-control" id="resume_url" name="resume_url" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email:</label>
-      <input type="email" class="form-control" id="email" name="email" required />
-    </div>
-    <div class="mb-3">
-      <label for="linkedin_url" class="form-label">LinkedIn URL:</label>
-      <input type="text" class="form-control" id="linkedin_url" name="linkedin_url" />
-    </div>
-    <div class="mb-3">
-      <label for="education" class="form-label">Education:</label>
-      <textarea class="form-control" id="education" name="education" rows="4" required></textarea>
-    </div>
-    <div class="mb-3">
-      <label for="work_experience" class="form-label">Work Experience:</label>
-      <textarea class="form-control" id="work_experience" name="work_experience" rows="4" required></textarea>
-    </div>
-    <div class="mb-3">
-      <label for="resume_url" class="form-label">Resume URL:</label>
-      <input type="text" class="form-control" id="resume_url" name="resume_url" />
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+    {% include 'includes/footer.html' %}
+  </body>
+</html>
