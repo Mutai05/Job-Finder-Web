@@ -54,3 +54,17 @@
     background-color: #F8F9FA;
   }
 }
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.btn-container {
+  margin-bottom: 20px;
+}
+
+/* Make the table responsive */
+.table-responsive {
+  overflow-x: auto;
+}
